@@ -1,0 +1,25 @@
+{
+  "name": "Cars",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha --timeout 100000"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "config": "^1.26.2",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.0.0",
+    "mongoose": "^4.11.7",
+    "morgan": "~1.0.0",
+    "pug": "^2.0.0-rc.3",
+    "static-favicon": "~1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.0"
+  }
+}
