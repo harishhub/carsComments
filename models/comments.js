@@ -9,19 +9,17 @@ const CommentsSchema = new Schema({
 		type: String,
 		trim: true,
 		required: "Comment is Required"
-	}/*,
-	userName: {
-		type: String,
-		//unique: true,
-		trim:true,
-		required: "userName is Required"
 	},
-	email: {
-		type: String,
-		//unique: true,
-		trim:true,
-		required: "email is Required"
-	}*/
+	userId: {
+		type: Schema.ObjectId, 
+		ref : 'users',
+		required: "userId is Required"
+	},
+	carId: {
+		type: Schema.ObjectId,
+		ref : "cars",
+		required: "carId is Required"
+	}
 }, {
 	timestamps: true
 });

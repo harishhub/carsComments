@@ -39,7 +39,7 @@ module.exports = {
 		Cars.getAllCars(limit,skip)
 			.then((cars) => {
 				
-				response.status(200).json({"cars":cars});
+				response.status(200).json({"cars":cars,"count":cars.length});
 			})
 			.catch((error) => {
 				response.status(500).json({"message":"Internal Server Issue"});
