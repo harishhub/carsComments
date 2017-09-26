@@ -3,11 +3,10 @@ var router = express.Router();
 
 const CommentsCtrl = require('../controllers/comments')
 
+// router.get('/',CommentsCtrl.getAllComments);
+// router.get('/:userId',CommentsCtrl.getUserComments);
+// router.get('/:carId',CommentsCtrl.getCarComments);
 
-router.get('/',CommentsCtrl.getAllAlerts);
-
-router.post('/', CommentsCtrl.insertAlert);
-
-router.delete('/:reference_id', CommentsCtrl.deleteAlert);
+router.post('/', CommentsCtrl.insertComment);
 
 module.exports = router;

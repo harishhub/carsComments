@@ -3,10 +3,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
-/**
- * [CarsSchema holds details related to Alert]
- * @type {Object}
-*/
+
 
 const CarsSchema = new Schema({
 	carName: {

@@ -20,7 +20,7 @@ mongoose.connect(config.mongodb,{useMongoClient: true})
 
 var cars = require('./routes/cars');
 var users = require('./routes/users');
-//var comments = require('./routes/comments');
+var comments = require('./routes/comments');
 
 
 var app = express();
@@ -38,7 +38,7 @@ app.use(cookieParser());
 
 app.use('/cars', cars);
 app.use('/users', users);
-//app.use('/comments', comments);
+app.use('/comments', comments);
 
 
 // catch 404 and forwarding to error handler

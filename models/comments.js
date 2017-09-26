@@ -4,12 +4,12 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
 
-const UsersSchema = new Schema({
-	name: {
+const CommentsSchema = new Schema({
+	comment: {
 		type: String,
 		trim: true,
-		required: "User Name is Required"
-	},
+		required: "Comment is Required"
+	}/*,
 	userName: {
 		type: String,
 		//unique: true,
@@ -21,9 +21,9 @@ const UsersSchema = new Schema({
 		//unique: true,
 		trim:true,
 		required: "email is Required"
-	}
+	}*/
 }, {
 	timestamps: true
 });
 
-module.exports = mongoose.model('users', UsersSchema);
+module.exports = mongoose.model('comment', CommentsSchema);

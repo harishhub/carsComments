@@ -1,23 +1,23 @@
-const Comments = require('../lib');
+const Comments = require('../lib/comments');
 
 
 module.exports = {
 	
 	insertComment: (request, response) => {
 		
-		const alert = request.body;
+		const comment = request.body;
 		
 		//For data Validation i can use some more efficient library like Joy.
-		if(alert.reference_id && alert.delay && alert.description){
-			Users.createAlert(alert)
-			.then((alert) => {
+		if(comment.carId && comment.userId && comment.comment){
+			Comments.createComment(comment)
+			.then((comment) => {
 
 	            response.status(201).json({
-	                "alert": {
+	                "comment": /*{
 	                	"reference_id":alert.reference_id,
 	                	"delay" : alert.delay,
 	                	"description":alert.description
-	                }
+	                }*/ comment
 	            });
 			})
 			.catch((error) => {
@@ -29,7 +29,7 @@ module.exports = {
 			response.status(400).json("Bad Request");
 		}
 		
-	},
+	}/*,
 
 	getAllComments: (request, response) => {
 		
@@ -46,22 +46,19 @@ module.exports = {
 				console.log(error);
 			})
 	},
-	
-	deleteComment: (request, response) => {
 
-		let reference_id = request.params.reference_id;
+	getUserComments: (request, response) => {
+		let skip = request.query.skip;
+		let limit = request.query.limit;
 		
-		Users.deleteAlert(reference_id)
+		Users.getAllAlerts(limit,skip)
 			.then((alert) => {
-				//console.log(alert);
-				if(alert)	
-					response.status(204).json({});
-				else
-					response.status(404).json("Alert with reference_id : " +reference_id +" couldn't be found");
+				
+				response.status(200).json({"alerts":alert});
 			})
 			.catch((error) => {
-				console.log(error);
 				response.status(500).json({"message":"Internal Server Issue"});
+				console.log(error);
 			})
-	}
+	}*/
 };
