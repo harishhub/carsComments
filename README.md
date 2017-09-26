@@ -62,7 +62,8 @@
 
       *   localhost:3000/comments/{{userId}}
           Get request
+          Pass the _id of a user from users collection at {{userId}} 
 
-      *  localhost:3000/comments/{carId}}
-         Get request    
-
+      *   localhost:3000/comments/{{carId}}
+          Get request    
+          Pass the _id of a car from cars collection at {{carId}} 
