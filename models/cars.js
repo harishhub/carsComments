@@ -21,7 +21,9 @@ const CarsSchema = new Schema({
 		trim: true,
 		required: "carDescription is Required"
 	}
-}, {
+},{
+	strict: false
+},{
 	timestamps: true
 });
 
